@@ -1,16 +1,19 @@
 package JAN_27;
 
 public class FEB_3 {
-    public static void main(String[] args) {
-        try{
-            //your statement goes here
-            int data = 12/0;
+     public static void validate(int age) throws Exception {
+        if(age < 18){
+            throw new Exception("Not eligible to vote");
+        }
+        else{
+            System.out.println("Eligible to vote");
+        }
+    }
 
-            //Exception occurs in try block and handled in catch block
-        }
-        catch(Exception e){
-            //you can catch and handle your exception here
-            System.out.println(e);
-        }
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the age : ");
+        int age = sc.nextInt();
+        validate(age);
     }
 }
